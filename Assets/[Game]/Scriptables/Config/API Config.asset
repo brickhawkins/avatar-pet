@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33926f0bfb8160e4b8982370fda32dd5, type: 3}
+  m_Name: API Config
+  m_EditorClassIdentifier: Assembly-CSharp::APIConfig
+  BaseURL: https://bubbserver.com/
+  ConfigPath: /api/v1/virtual-pet/get-config
+  ItemPath: /api/v1/virtual-pet/get-items
+  MiniGamesPath: /api/v1/virtual-pet/get-minigames
+  LoginPath: /api/v2/login
+  RefreshPath: /api/v1/refresh
+  GetStatusPath: /api/v1/virtual-pet/get-user-status
+  AddStatusPath: /api/v1/virtual-pet/add-user-status
+  UpdateStatusPath: /api/v1/virtual-pet/update-user-status
+  GetInventoryPath: /api/v1/virtual-pet/get-inventory
+  AddInventoryPath: /api/v1/virtual-pet/add-inventory
+  RemoveInventoryPath: /api/v1/virtual-pet/remove-inventory
