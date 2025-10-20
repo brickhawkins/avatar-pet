@@ -7,7 +7,7 @@ using UnityEngine.Networking;
 public class UserInventoryDataService : MonoBehaviour
 {
     [SerializeField] APIConfig APIConfig;
-    [SerializeField] UserData userData;
+    [SerializeField] ChannelUser channelUser;
 
     public async UniTask<UserInventory[]> GetInventory()
     {
@@ -20,7 +20,7 @@ public class UserInventoryDataService : MonoBehaviour
             downloadHandler = new DownloadHandlerBuffer()
         };
 
-        request.SetRequestHeader("Authorization", $"Bearer {userData.AccessToken}");
+        request.SetRequestHeader("Authorization", $"Bearer {channelUser.Current.Value.AccessToken}");
         request.SetRequestHeader("Content-Type", "application/json");
 
         // Send the request and await its completion
@@ -65,7 +65,7 @@ public class UserInventoryDataService : MonoBehaviour
 
         // Set headers
         //request.SetRequestHeader("apikey", anonKey);
-        request.SetRequestHeader("Authorization", $"Bearer {userData.AccessToken}");
+        request.SetRequestHeader("Authorization", $"Bearer {channelUser.Current.Value.AccessToken}");
         request.SetRequestHeader("Content-Type", "application/json");
         request.SetRequestHeader("Prefer", "return=representation");
 
@@ -101,7 +101,7 @@ public class UserInventoryDataService : MonoBehaviour
 
         // Set headers
         //request.SetRequestHeader("apikey", anonKey);
-        request.SetRequestHeader("Authorization", $"Bearer {userData.AccessToken}");
+        request.SetRequestHeader("Authorization", $"Bearer {channelUser.Current.Value.AccessToken}");
         request.SetRequestHeader("Content-Type", "application/json");
 
         // Send the request and await its completion
