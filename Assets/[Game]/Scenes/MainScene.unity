@@ -937,10 +937,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ConfigDataService
   APIConfig: {fileID: 0}
-  userData:
-    AccessToken: 
-    RefreshToken: 
-    UserName: 
+  channelUser: {fileID: 0}
 --- !u!1 &351387693
 GameObject:
   m_ObjectHideFlags: 0
@@ -1054,6 +1051,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 355975044}
+  - component: {fileID: 355975045}
   m_Layer: 0
   m_Name: MiniGames
   m_TagString: Untagged
@@ -1076,6 +1074,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 52503239}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &355975045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 355975043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21a4e428deb48eb47a41e282b6c8af33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MiniGameDataService
+  baseURL: 
+  anonKey: 
 --- !u!1 &371595121
 GameObject:
   m_ObjectHideFlags: 0
@@ -7216,6 +7228,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2146092107}
   - component: {fileID: 2146092106}
+  - component: {fileID: 2146092111}
   - component: {fileID: 2146092105}
   - component: {fileID: 2146092109}
   - component: {fileID: 2146092108}
@@ -7241,6 +7254,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UserManager
   bridge: {fileID: 11400000, guid: 267d8313868d63347af5a5dbe252b81e, type: 2}
   user: {fileID: 11400000, guid: f3c8b7d82af0bbd4fa6c058ca820ff58, type: 2}
+  channelConfig: {fileID: 11400000, guid: 8508e777a6e70f44cb0616efc5d52f65, type: 2}
   inventory: {fileID: 11400000, guid: 7ddfe836c603f6c4aaab28e505ab6401, type: 2}
   status: {fileID: 11400000, guid: dcf514928959b8841bce6b1b2680c917, type: 2}
   userDataService: {fileID: 1117960585}
@@ -7315,6 +7329,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LogManager
   logText: {fileID: 1517992110}
   maxLogLines: 100
+--- !u!114 &2146092111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2146092104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73969917f14a48df875323e6fb5c44de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MasterDataManager
+  channelUser: {fileID: 11400000, guid: f3c8b7d82af0bbd4fa6c058ca820ff58, type: 2}
+  channelConfig: {fileID: 11400000, guid: 8508e777a6e70f44cb0616efc5d52f65, type: 2}
+  channelItem: {fileID: 11400000, guid: 273effc04dc06314494ff5c66744931b, type: 2}
+  channelMiniGame: {fileID: 11400000, guid: c4ea7ecdb7c8f854a8e92e9eb8e109e0, type: 2}
+  configDataService: {fileID: 330680333}
+  itemDataService: {fileID: 86433382}
+  miniGameDataService: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
