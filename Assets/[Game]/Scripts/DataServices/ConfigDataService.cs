@@ -7,10 +7,7 @@ using UnityEngine.Networking;
 public class ConfigDataService : MonoBehaviour
 {
     [SerializeField] APIConfig APIConfig;
-    [SerializeField] UserData userData;
-
-
-
+    [SerializeField] ChannelUser channelUser;
     public async UniTask<Config[]> GetConfig()
     {
         string url = $"{APIConfig.BaseURL}{APIConfig.ConfigPath}";
@@ -22,7 +19,21 @@ public class ConfigDataService : MonoBehaviour
             downloadHandler = new DownloadHandlerBuffer()
         };
 
-        request.SetRequestHeader("Authorization", $"Bearer {userData.AccessToken}");
+        if (channelUser == null)
+        {
+            Debug.LogError("ConfigDataService: ChannelUser reference is missing.");
+            return configs;
+        }
+
+        string accessToken = channelUser.Current.Value.AccessToken;
+
+        if (string.IsNullOrEmpty(accessToken))
+        {
+            Debug.LogWarning("ConfigDataService: Tried to load config without a valid access token.");
+            return configs;
+        }
+
+        request.SetRequestHeader("Authorization", $"Bearer {accessToken}");
         request.SetRequestHeader("Content-Type", "application/json");
 
         await request.SendWebRequest();
